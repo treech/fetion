@@ -1,0 +1,1 @@
+include ':app', ':common', ':module_message', ':module_contacts', ':module_me', ':module_phone', ':module_oa'

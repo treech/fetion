@@ -1,0 +1,69 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        //$localGradlePluginVersion是gradle.properties中的数据
+        classpath "com.android.tools.build:gradle:$localGradlePluginVersion"
+
+        //butterknife
+        classpath 'com.jakewharton:butterknife-gradle-plugin:8.2.1'
+
+        //greendao
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
+
+        //dagger2
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        //greendao needs
+        mavenCentral()
+        //PersistentCookieJar needs
+        maven { url "https://jitpack.io" }
+    }
+
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+// Define versions in a single place
+//时间：2017.11.03；每次修改版本号都要添加修改时间
+ext {
+    // Sdk and tools
+    //localBuildToolsVersion是gradle.properties中的数据
+    buildToolsVersion = localBuildToolsVersion
+    compileSdkVersion = 26
+    minSdkVersion = 15
+    targetSdkVersion = 25
+    versionCode = 1
+    versionName = "1.0"
+    javaVersion = JavaVersion.VERSION_1_8
+
+    // App dependencies version
+    supportLibraryVersion = "25.3.1"
+    retrofitVersion = "2.3.0"
+    cookieVersion = "v1.0.1"
+    butterknifeVersion = "8.2.1"
+    dagger2Version = "2.6"
+    glideVersion = "3.7.0"
+    fastjsonVersion = "1.1.64.android"
+    greendaoVersion = "3.2.2"
+    rxandroidVersion = "2.0.1"
+    rxjavaVersion = "2.0.5"
+    rxpermissionsVersion = "0.9.3@aar"
+
+    //检查时间：2017.11.03
+    annotationProcessor = "1.1.2"
+    routerVersion = "1.2.1"
+
+
+}

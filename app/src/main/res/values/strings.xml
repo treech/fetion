@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Rcs</string>
+    <string name="global_scheme">module</string>
+
+    <!-- 崩溃 -->
+    <string name="crash_toast_text">程序崩溃了</string>
+    <string name="crash_dialog_text">感谢您对我们的支持！</string>
+    <string name="crash_dialog_title">发送崩溃日志</string>
+    <string name="crash_dialog_ok_toast">发送成功</string>
+
+    <string name="tab_message">消息</string>
+    <string name="tab_contacts">电话薄</string>
+    <string name="tab_phone">通话</string>
+    <string name="tab_me">我</string>
+
+
+    <string name="main_show">main</string>
+
+</resources>

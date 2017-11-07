@@ -1,0 +1,90 @@
+apply plugin: 'com.android.library'
+// butterknife
+apply plugin: 'com.jakewharton.butterknife'
+// greendao
+apply plugin: 'org.greenrobot.greendao'
+// dagger2
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        //ARouter needs
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug{
+        }
+    }
+
+    repositories {
+        mavenCentral()
+        //api 26以上需要添加此maven地址方能下载support依赖
+        maven { url 'https://maven.google.com' }
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    //Android Support
+    compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:design:$rootProject.supportLibraryVersion"
+    compile "com.android.support:percent:$rootProject.supportLibraryVersion"
+
+    //Retrofit
+    compile "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    compile "com.squareup.retrofit2:retrofit-mock:$rootProject.retrofitVersion"
+    //cookie持久化
+    compile "com.github.franmontiel:PersistentCookieJar:$rootProject.cookieVersion"
+
+    //组件之间界面跳转的ARouter
+    compile "com.alibaba:arouter-api:$rootProject.routerVersion"
+    annotationProcessor "com.alibaba:arouter-compiler:$rootProject.annotationProcessor"
+
+    //ButterKnife
+    compile "com.jakewharton:butterknife:$rootProject.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
+
+    //Dagger2
+    compile "com.google.dagger:dagger:$rootProject.dagger2Version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
+
+    //glide 可以其中网络请求改为okhttp
+    compile "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+
+    //fastjason.android去掉Android虚拟机dalvik不支持的功能
+    compile "com.alibaba:fastjson:$rootProject.fastjsonVersion"
+
+    //greendao
+    compile "org.greenrobot:greendao:$rootProject.greendaoVersion"
+
+    //RxAndroid
+    compile "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
+
+    //RxJava
+    compile "io.reactivex.rxjava2:rxjava:$rootProject.rxjavaVersion"
+
+    //RxPermission2
+    compile "com.tbruyelle.rxpermissions2:rxpermissions:$rootProject.rxpermissionsVersion"
+
+}
+
+

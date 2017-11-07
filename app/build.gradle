@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+
+static def buildTime() {
+    return new Date().format("yyyyMMdd");
+}
+
+android {
+    signingConfigs {
+        release {
+            keyAlias 'rcs'
+            keyPassword '123456'
+            storeFile file('E:/Protocol/fetion/work/1107/fetion/app/src/main/jks/rcs.jks')
+            storePassword '123456'
+        }
+    }
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId "com.chinasofti.rcs"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionName rootProject.ext.versionName
+        multiDexEnabled true
+        //打包时间
+        resValue "string", "build_time", buildTime()
+        signingConfig signingConfigs.release
+    }
+    buildTypes {
+        release {
+            //更改AndroidManifest.xml中预先定义好占位符信息
+            //manifestPlaceholders = [app_icon: "@drawable/icon"]
+            //是否zip对齐
+            zipAlignEnabled false
+            // 缩减resource文件
+            shrinkResources false
+            //Proguard
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //签名
+            signingConfig signingConfigs.release
+        }
+        debug {
+            //给applicationId添加后缀“.debug”
+            applicationIdSuffix ".debug"
+            //manifestPlaceholders = [app_icon: "@drawable/launch_beta"]
+            zipAlignEnabled false
+            shrinkResources false
+            minifyEnabled false
+            debuggable true
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //application crash report
+    compile 'ch.acra:acra:4.9.2'
+    //https://github.com/ACRA/acra/wiki/BasicSetup
+    //解决64K限制，方法数超过65535问题
+    compile 'com.android.support:multidex:1.0.1'
+    if (isModule.toBoolean()) {
+        compile project(':common')
+    } else {
+        compile project(':module_message')
+        compile project(':module_contacts')
+        compile project(':module_phone')
+        compile project(':module_me')
+        compile project(':module_oa')
+    }
+}
