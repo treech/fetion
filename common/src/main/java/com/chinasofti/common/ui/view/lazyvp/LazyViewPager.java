@@ -1,12 +1,12 @@
-package com.chinasofti.message.ui.view.lazyvp;
+package com.chinasofti.common.ui.view.lazyvp;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import com.chinasofti.common.R;
 
-import com.chinasofti.message.R;
 
 /**
  * ViewPager that add items lazily in the two following situation:

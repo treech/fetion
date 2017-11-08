@@ -5,8 +5,7 @@
     <application
         android:name="com.debug.MessageApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/mes_app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 

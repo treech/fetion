@@ -49,7 +49,6 @@ public class BaseApplication extends Application {
             ApplicationDelegate fragment_contacts = (ApplicationDelegate) Class.forName(Delegate_CONTACTS).newInstance();
             ApplicationDelegate fragment_phone = (ApplicationDelegate) Class.forName(Delegate_PHONE).newInstance();
             ApplicationDelegate fragment_me = (ApplicationDelegate) Class.forName(Delegate_ME).newInstance();
-            YLog.e(fragment_message);
             sDelegate.add(fragment_message);
             sDelegate.add(fragment_contacts);
             sDelegate.add(fragment_phone);

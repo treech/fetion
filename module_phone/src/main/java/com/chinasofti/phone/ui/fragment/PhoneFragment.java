@@ -13,6 +13,6 @@ public class PhoneFragment extends BaseFragment {
 
     @Override
     protected int provideContentViewId() {
-        return R.layout.phone_layout;
+        return R.layout.pho_layout;
     }
 }

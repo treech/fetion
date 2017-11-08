@@ -13,6 +13,6 @@ public class ContactsFragment extends BaseFragment {
 
     @Override
     protected int provideContentViewId() {
-        return R.layout.contacts_layout;
+        return R.layout.con_layout;
     }
 }

@@ -1,4 +1,4 @@
-package com.chinasofti.message.ui.view.lazyvp;
+package com.chinasofti.common.ui.view.lazyvp;
 
 import android.view.View;
 import android.view.ViewGroup;

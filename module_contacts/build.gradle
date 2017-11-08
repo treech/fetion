@@ -42,6 +42,13 @@ android {
             }
         }
     }
+
+    //约定资源文件命名规则
+    resourcePrefix "con_"
+
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {

@@ -39,6 +39,10 @@ android {
         maven { url 'https://maven.google.com' }
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 dependencies {

@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:gravity="center"
-        android:text="@string/tv_show"
+        android:text="@string/con_tv_show"
         android:textSize="@dimen/size_70dp"></TextView>
 
 </LinearLayout>

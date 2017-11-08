@@ -1,4 +1,4 @@
-package com.chinasofti.message.ui.view.pulltozoomview;
+package com.chinasofti.common.ui.view.pulltozoomview;
 
 import android.content.Context;
 import android.content.res.TypedArray;

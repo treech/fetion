@@ -25,6 +25,6 @@ public class MessageFragment extends BaseFragment {
 
     @Override
     protected int provideContentViewId() {
-        return R.layout.message_layout;
+        return R.layout.mes_layout;
     }
 }

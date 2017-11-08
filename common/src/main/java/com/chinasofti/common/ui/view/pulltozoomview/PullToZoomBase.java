@@ -1,4 +1,4 @@
-package com.chinasofti.message.ui.view.pulltozoomview;
+package com.chinasofti.common.ui.view.pulltozoomview;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,8 +12,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-
-import com.chinasofti.message.R;
+import com.chinasofti.common.R;
 
 
 /**
