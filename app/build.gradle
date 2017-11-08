@@ -9,7 +9,7 @@ android {
         release {
             keyAlias 'rcs'
             keyPassword '123456'
-            storeFile file('E:/Protocol/fetion/work/1107/fetion/app/src/main/jks/rcs.jks')
+            storeFile file('src/main/jks/rcs.jks')
             storePassword '123456'
         }
     }
