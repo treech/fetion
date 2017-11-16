@@ -83,11 +83,15 @@ dependencies {
     //RxAndroid
     compile "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
 
-    //RxJava
+    //RxJava2
     compile "io.reactivex.rxjava2:rxjava:$rootProject.rxjavaVersion"
 
     //RxPermission2
     compile "com.tbruyelle.rxpermissions2:rxpermissions:$rootProject.rxpermissionsVersion"
+
+    //Rxlifecycle2
+    compile "com.trello.rxlifecycle2:rxlifecycle:$rootProject.rxlifecycleVersion"
+    compile "com.trello.rxlifecycle2:rxlifecycle-components:$rootProject.rxlifecycleVersion"
 
 }
 
