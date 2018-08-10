@@ -3,9 +3,13 @@
 buildscript {
     repositories {
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:3.0.1'
         //$localGradlePluginVersion是gradle.properties中的数据
         classpath "com.android.tools.build:gradle:$localGradlePluginVersion"
 
@@ -27,6 +31,10 @@ allprojects {
         mavenCentral()
         //PersistentCookieJar needs
         maven { url "https://jitpack.io" }
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
 
 }
@@ -53,7 +61,7 @@ ext {
     retrofitVersion = "2.3.0"
     cookieVersion = "v1.0.1"
     butterknifeVersion = "8.2.1"
-    dagger2Version = "2.6"
+    dagger2Version = "2.13"
     glideVersion = "3.7.0"
     fastjsonVersion = "1.1.64.android"
     greendaoVersion = "3.2.2"

@@ -3,8 +3,6 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.jakewharton.butterknife'
 // greendao
 apply plugin: 'org.greenrobot.greendao'
-// dagger2
-apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -43,6 +41,7 @@ android {
         abortOnError false
     }
 
+    buildToolsVersion '26.0.2'
 }
 
 dependencies {
@@ -68,7 +67,7 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
 
     //Dagger2
-    compile "com.google.dagger:dagger:$rootProject.dagger2Version"
+    annotationProcessor "com.google.dagger:dagger:$rootProject.dagger2Version"
     annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
 
     //glide 可以其中网络请求改为okhttp

@@ -55,13 +55,11 @@ android {
     lintOptions {
         abortOnError false
     }
+    buildToolsVersion '26.0.2'
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    //application crash report
-    compile 'ch.acra:acra:4.9.2'
-    //https://github.com/ACRA/acra/wiki/BasicSetup
     //解决64K限制，方法数超过65535问题
     compile 'com.android.support:multidex:1.0.1'
     if (isModule.toBoolean()) {
